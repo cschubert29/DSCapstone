@@ -1,12 +1,29 @@
-## Welcome to GitHub Pages
+## Modeling customer retention using claim details and survey responses
 
-You can use the [editor on GitHub](https://github.com/cschubert29/DSCapstone/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+Customer attrition, or the loss of customers, is used as a key performance indicator across several industries, including insurance. The insurance industry’s customer acquisition costs are high, so it is important to retain existing customers rather than only focus on getting new ones [1]. The distribution of resources for both customer retention and acquisition can be improved by being able to predict the likelihood of a customer to cancel their policy after filing a claim.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+### Objectives
 
-### Markdown
+The goal of this project is to predict customer attrition within a line of business at Assurant, Connected Living. In particular, a model will predict hte probability of a customer canceling their policy after a certain period of time after a claim created by using claim attributes and possibly text as features, depending on the model performance without text
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+
+### Data
+
+The primary dataset to be used consists of a table which has joined claim details and post-claim survey responses at a customer level.  The size of the data without excluding individuals who did not answer the open-ended question in the survey is over 250,000 records for three years’ worth of claims. The size is drastically reduced when considering only those who answered the open-ended question for building a model based on language and if we choose to limit the data range further. While exploring the data briefly, the cancel rate for a policy after a claim has been filed is approximately 20%. This percentage will vary based on the date range and other filters.
+
+Among the questions present in the survey is one asking the customer how likely is it that they would recommend the product to someone else. The answer to this question is a number from 1 to 10, the net promoter score (NPS) rating. The open-ended question asks the customer to explain the reason behind the chosen NPS rating. Some of the attributes from the claim portion of the data include: whether the replacement device was new or not, device model shipped, loss type, scrutiny level, device model claimed, shipping method, deductible amount, time to approve, time to authorize, time to ship, and total claim time.
+
+### Methods
+
+The approach is to build a model using only the structured fields from the data first and then incorporate language to improve performance. Initially, a binary feature indicating whether the open-ended survey question was answered can be included. An SVM classifier among others will be evaluated. A starting point for using language as features is a bag of words (BoW) model. There is time available within the schedule of work to attempt a deep learning method but would probably need to collect more data.
+
+### Results
+
+Visualizations of results to be placed here.
+
+### Conclusions
+
+Conclusions here.
 
 ```markdown
 Syntax highlighted code block
@@ -25,13 +42,3 @@ Syntax highlighted code block
 
 [Link](url) and ![Image](src)
 ```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/cschubert29/DSCapstone/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.

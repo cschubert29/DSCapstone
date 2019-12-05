@@ -1,4 +1,4 @@
-## Modeling Customer Attrition Based on Post-Event Insurance Data
+## [Modeling Customer Attrition Based on Post-Event Insurance Data](https://github.com/cschubert29/DSCapstone/blob/master/IDC_6940_Final_Report___CSchubert.pdf)
 
 Customer attrition, or the loss of customers, is used as a key performance indicator across several industries, including insurance. The insurance industry’s customer acquisition costs are high, so it is important to retain existing customers rather than only focus on getting new ones. The distribution of resources for both customer retention and acquisition can be improved by being able to predict the likelihood of a customer to cancel their policy after filing a claim.
 
@@ -7,7 +7,6 @@ Customer attrition, or the loss of customers, is used as a key performance indic
 The key goal of this project was to answer the following questions:
 * Is it feasible to model customer attrition using claim data and achieve actionable results?
 * Can specific attributes associated with high likelihood of attrition be derived?
-* What recommendations can be made to improve attrition rates?
 
 Model performance was evaluated against a baseline and feature importance analysis was conducted to determine the attributes that contribute to attrition.
 
@@ -29,26 +28,23 @@ The approach is to build a model using only the structured fields from the data 
 
 ### Results
 
-Visualizations of results to be placed here.
+![Table10.PNG](/assets/img/Table10.PNG)
+
+![Table7.png](/assets/img/Table7.png)
+
+![FeatureImp1](/assets/img/FeatureImp1.png#left)
+
+![FeatureImp2](/assets/img/FeatureImp2.png#right)
+
+Based on gain, the most important features from the first figure are: Answer 1; Loss = physical damage; Non-new
+replacement device; and Deductible amount. The most important features from the second figure are: Carrier = Samsung or
+T-Mobile; and the following TF-IDF terms: "cancel", "scam"," f***", and "apple." Other important features
+are low scrutiny count and total claim time.
 
 ### Conclusions
 
-Conclusions here.
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
+* Contributed a developed model
+* An augmented key driver analysis for attrition which includes external data sources and significant TF-IDF terms
+* Model did not  achieve start of art F1 score but is better than the most frequent baseline
+* Important features can be used to make recommendations to the claims operations and customer experience teams on how to improve and prevent attrition
+* Further work can entail working on carrier-specific models and rule-based methods for driving customer continuity management
